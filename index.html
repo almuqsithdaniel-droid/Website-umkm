@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LokalPreneur | Marketplace UMKM Indonesia</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="#home" class="logo"><i class="fas fa-store"></i><span>LokalPreneur</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Beranda</a></li>
+      <li><a href="#produk">Produk</a></li>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#testimoni">Testimoni</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-icon" id="themeToggle" title="Mode Gelap/Terang"><i class="fas fa-moon"></i></button>
+      <button class="btn-icon" id="cartBtn" title="Keranjang"><i class="fas fa-shopping-cart"></i><span class="cart-count" id="cartCount">0</span></button>
+      <button class="btn-icon" id="ordersBtn" title="Pesanan Saya"><i class="fas fa-receipt"></i></button>
+      <button class="btn-icon" id="adminBtn" title="Admin Panel"><i class="fas fa-user-shield"></i></button>
+      <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Dukung UMKM Lokal,<br>Bangkitkan Ekonomi Indonesia</h1>
+      <p>Temukan produk unggulan dari pelaku usaha mikro, kecil, dan menengah di seluruh nusantara.</p>
+      <div class="hero-btns">
+        <a href="#produk" class="btn btn-primary"><i class="fas fa-shopping-bag"></i> Jelajahi Produk</a>
+        <a href="#tentang" class="btn btn-outline"><i class="fas fa-info-circle"></i> Tentang Kami</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <i class="fas fa-hand-holding-heart"></i>
+        <h3>100% Produk Lokal</h3>
+        <p>Dukung pengrajin & petani Indonesia</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stat-card"><h3 class="counter" data-target="1250">0</h3><p>Produk UMKM</p></div>
+    <div class="stat-card"><h3 class="counter" data-target="380">0</h3><p>Pelaku Usaha</p></div>
+    <div class="stat-card"><h3 class="counter" data-target="45">0</h3><p>Kota & Kabupaten</p></div>
+    <div class="stat-card"><h3 class="counter" data-target="9800">0</h3><p>Pelanggan Puas</p></div>
+  </section>
+
+  <section class="section" id="produk">
+    <div class="section-title"><h2>Katalog Produk UMKM</h2><p>Pilih produk terbaik dari pelaku usaha lokal</p></div>
+    <div class="filter-bar">
+      <div class="search-box"><i class="fas fa-search"></i><input type="text" id="searchInput" placeholder="Cari produk..." /></div>
+      <select class="filter-select" id="categoryFilter">
+        <option value="all">Semua Kategori</option>
+        <option value="makanan">Makanan & Minuman</option>
+        <option value="kerajinan">Kerajinan Tangan</option>
+        <option value="fashion">Fashion & Aksesoris</option>
+        <option value="kecantikan">Kecantikan</option>
+        <option value="pertanian">Pertanian</option>
+      </select>
+      <select class="filter-select" id="priceFilter">
+        <option value="all">Semua Harga</option>
+        <option value="0-50000">Di bawah Rp 50.000</option>
+        <option value="50000-150000">Rp 50.000 - 150.000</option>
+        <option value="150000-500000">Rp 150.000 - 500.000</option>
+        <option value="500000+">Di atas Rp 500.000</option>
+      </select>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+  </section>
+
+  <section class="section about" id="tentang">
+    <div class="section-title"><h2>Tentang LokalPreneur</h2><p>Platform digital yang menghubungkan UMKM dengan pasar yang lebih luas</p></div>
+    <div class="about-grid">
+      <div class="about-card"><div class="about-icon"><i class="fas fa-store"></i></div><h3>Marketplace UMKM</h3><p>Tempat jual-beli produk lokal dari seluruh Indonesia.</p></div>
+      <div class="about-card"><div class="about-icon"><i class="fas fa-handshake"></i></div><h3>Pemberdayaan</h3><p>Membantu pelaku UMKM naik kelas melalui pelatihan digital.</p></div>
+      <div class="about-card"><div class="about-icon"><i class="fas fa-shipping-fast"></i></div><h3>Pengiriman Cepat</h3><p>Bekerja sama dengan kurir lokal agar produk sampai cepat.</p></div>
+      <div class="about-card"><div class="about-icon"><i class="fas fa-shield-alt"></i></div><h3>Transaksi Aman</h3><p>Sistem pembayaran terpercaya dan perlindungan konsumen.</p></div>
+    </div>
+  </section>
+
+  <section class="section testimonials" id="testimoni">
+    <div class="section-title"><h2>Apa Kata Mereka?</h2><p>Testimoni dari pelanggan dan mitra UMKM</p></div>
+    <div class="testimonial-slider" id="testimonialSlider"></div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="section-title"><h2>Pertanyaan yang Sering Diajukan</h2><p>Temukan jawaban untuk pertanyaan umum</p></div>
+    <div class="faq-list" id="faqList"></div>
+  </section>
+
+  <section class="section" id="kontak">
+    <div class="section-title"><h2>Hubungi Kami</h2><p>Ada pertanyaan atau ingin bergabung sebagai mitra UMKM?</p></div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Informasi Kontak</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Jl. KH. Wahid Hasyim No.1, Limpung, Kec. Limpung, Kabupaten Batang, Jawa Tengah 51271</p>
+        <p><i class="fas fa-phone"></i> 081567894103</p>
+        <p><i class="fas fa-envelope"></i> halo@lokalpreneur.id</p>
+        <p><i class="fas fa-clock"></i> Senin - Sabtu, 08.00 - 17.00 WIB</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-group"><label for="name">Nama Lengkap</label><input type="text" id="name" required placeholder="Masukkan nama Anda" /></div>
+        <div class="form-group"><label for="email">Email</label><input type="email" id="email" required placeholder="email@contoh.com" /></div>
+        <div class="form-group"><label for="subject">Subjek</label><input type="text" id="subject" required placeholder="Judul pesan" /></div>
+        <div class="form-group"><label for="message">Pesan</label><textarea id="message" required placeholder="Tulis pesan Anda..."></textarea></div>
+        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Kirim Pesan</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div><h4><i class="fas fa-store"></i> LokalPreneur</h4><p>Platform marketplace yang memberdayakan UMKM Indonesia.</p></div>
+      <div><h4>Tautan Cepat</h4><a href="#home">Beranda</a><a href="#produk">Produk</a><a href="#tentang">Tentang</a><a href="#kontak">Kontak</a></div>
+      <div><h4>Kategori</h4><a href="#produk">Makanan</a><a href="#produk">Kerajinan</a><a href="#produk">Fashion</a><a href="#produk">Kecantikan</a></div>
+      <div><h4>Bantuan</h4><a href="#faq">FAQ</a><a href="#kontak">Hubungi Kami</a><a href="#">Privasi</a><a href="#">Syarat</a></div>
+    </div>
+    <div class="copyright">&copy; 2026 LokalPreneur. UMKM Indonesia.</div>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header"><h3><i class="fas fa-shopping-cart"></i> Keranjang</h3><button class="btn-icon" id="closeCart"><i class="fas fa-times"></i></button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Total</span><span id="cartTotal">Rp 0</span></div>
+      <button class="btn btn-primary" style="width:100%" id="checkoutBtn"><i class="fas fa-credit-card"></i> Checkout</button>
+    </div>
+  </aside>
+
+  <!-- PRODUCT MODAL -->
+  <div class="modal" id="productModal">
+    <div class="modal-content modal-content-lg">
+      <button class="modal-close" id="closeModal"><i class="fas fa-times"></i></button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- ADMIN LOGIN -->
+  <div class="modal" id="adminLoginModal">
+    <div class="modal-content modal-content-sm">
+      <button class="modal-close" id="closeAdminLogin"><i class="fas fa-times"></i></button>
+      <div class="admin-login-box">
+        <div class="admin-login-header">
+          <i class="fas fa-user-shield"></i>
+          <h2>Login Admin</h2>
+          <p>Masuk untuk mengelola produk</p>
+        </div>
+        <form id="adminLoginForm">
+          <div class="form-group"><label for="adminUsername">Username</label><input type="text" id="adminUsername" required placeholder="" /></div>
+          <div class="form-group"><label for="adminPassword">Password</label><input type="password" id="adminPassword" required placeholder="" /></div>
+         
+          <button type="submit" class="btn btn-primary" style="width:100%"><i class="fas fa-sign-in-alt"></i> Masuk</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN PANEL -->
+  <div class="modal" id="adminPanelModal">
+    <div class="modal-content modal-content-xl">
+      <button class="modal-close" id="closeAdminPanel"><i class="fas fa-times"></i></button>
+      <div class="admin-panel">
+        <div class="admin-panel-header">
+          <div><h2><i class="fas fa-cog"></i> Panel Admin</h2><p>Kelola produk UMKM</p></div>
+          <button class="btn btn-sm btn-logout" id="adminLogoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+        <div class="admin-tabs">
+          <button class="admin-tab active" data-tab="add">Tambah Produk</button>
+          <button class="admin-tab" data-tab="list">Daftar Produk</button>
+          <button class="admin-tab" data-tab="orders">Pesanan</button>
+        </div>
+        <div class="admin-tab-content active" id="tabAdd">
+          <form id="productForm">
+            <input type="hidden" id="editProductId" value="" />
+            <div class="form-row">
+              <div class="form-group"><label for="prodName">Nama Produk *</label><input type="text" id="prodName" required placeholder="Contoh: Keripik Singkong" /></div>
+              <div class="form-group">
+                <label for="prodCategory">Kategori *</label>
+                <select id="prodCategory" required>
+                  <option value="makanan">Makanan & Minuman</option>
+                  <option value="kerajinan">Kerajinan Tangan</option>
+                  <option value="fashion">Fashion & Aksesoris</option>
+                  <option value="kecantikan">Kecantikan</option>
+                  <option value="pertanian">Pertanian</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label for="prodPrice">Harga (Rp) *</label><input type="number" id="prodPrice" required min="1000" placeholder="25000" /></div>
+              <div class="form-group"><label for="prodBadge">Badge (opsional)</label><input type="text" id="prodBadge" placeholder="Best Seller, Handmade" /></div>
+            </div>
+            <div class="form-group">
+              <label for="prodIcon">Icon</label>
+              <select id="prodIcon">
+                <option value="fa-cookie-bite">Makanan</option>
+                <option value="fa-mug-hot">Minuman</option>
+                <option value="fa-shopping-bag">Tas</option>
+                <option value="fa-shirt">Fashion</option>
+                <option value="fa-spa">Kecantikan</option>
+                <option value="fa-seedling">Pertanian</option>
+                <option value="fa-gem">Aksesoris</option>
+                <option value="fa-jar">Madu/Jar</option>
+                <option value="fa-leaf">Herbal</option>
+                <option value="fa-bowl-food">Makanan 2</option>
+                <option value="fa-hat-cowboy">Topi</option>
+                <option value="fa-vase">Keramik</option>
+              </select>
+            </div>
+            <div class="form-group"><label for="prodDesc">Deskripsi *</label><textarea id="prodDesc" required rows="3" placeholder="Deskripsi produk..."></textarea></div>
+            <div class="form-group">
+              <label for="prodVariants">Varian / Pilihan Produk (opsional)</label>
+              <textarea id="prodVariants" rows="3" placeholder="Satu baris = satu grup pilihan. Format: Nama Grup: opsi1, opsi2, opsi3&#10;Contoh:&#10;Ukuran: S, M, L, XL&#10;Rasa: Original, Pedas, Manis&#10;Level: 1, 2, 3"></textarea>
+              <small style="color:var(--text-muted);font-size:0.8rem;display:block;margin-top:0.3rem">
+                Kosongkan = pakai default kategori otomatis:<br>
+                • Fashion → Ukuran (S–XXL) + Warna<br>
+                • Makanan → Rasa + Ukuran Pack<br>
+                • Kecantikan → Ukuran + Varian kulit<br>
+                • Kerajinan → Ukuran + Warna<br>
+                • Pertanian → Volume + Kemasan<br>
+                Atau isi manual (satu baris = satu grup): Ukuran: S, M, L
+              </small>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> <span id="saveBtnText">Tambah Produk</span></button>
+              <button type="button" class="btn btn-outline-dark" id="cancelEditBtn" style="display:none">Batal Edit</button>
+            </div>
+          </form>
+        </div>
+        <div class="admin-tab-content" id="tabList">
+          <div class="admin-product-list" id="adminProductList"></div>
+        </div>
+        <div class="admin-tab-content" id="tabOrders">
+          <div class="admin-orders-list" id="adminOrdersList"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VARIANT SELECT MODAL -->
+  <div class="modal" id="variantModal">
+    <div class="modal-content modal-content-sm">
+      <button class="modal-close" id="closeVariant"><i class="fas fa-times"></i></button>
+      <div class="variant-box" id="variantBox">
+        <h2 id="variantProductName">Pilih Varian</h2>
+        <div id="variantOptions"></div>
+        <div class="form-group" style="margin-top:1rem">
+          <label for="variantQty">Jumlah</label>
+          <div class="qty-control">
+            <button type="button" class="qty-btn" id="varQtyMinus">−</button>
+            <input type="number" id="variantQty" value="1" min="1" max="99" />
+            <button type="button" class="qty-btn" id="varQtyPlus">+</button>
+          </div>
+        </div>
+        <button class="btn btn-primary" style="width:100%;margin-top:0.8rem" id="confirmVariantBtn">
+          <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT MODAL -->
+  <div class="modal" id="checkoutModal">
+    <div class="modal-content modal-content-lg">
+      <button class="modal-close" id="closeCheckout"><i class="fas fa-times"></i></button>
+      <div class="checkout-box">
+        <h2><i class="fas fa-credit-card"></i> Checkout Pesanan</h2>
+        <div class="checkout-grid">
+          <div class="checkout-form-side">
+            <form id="checkoutForm">
+              <div class="form-group">
+                <label for="buyerName">Nama Lengkap *</label>
+                <input type="text" id="buyerName" required placeholder="Nama penerima" />
+              </div>
+              <div class="form-group">
+                <label for="buyerPhone">No. WhatsApp / HP *</label>
+                <input type="tel" id="buyerPhone" required placeholder="08xxxxxxxxxx" />
+              </div>
+              <div class="form-group">
+                <label for="buyerAddress">Alamat Lengkap *</label>
+                <textarea id="buyerAddress" required rows="3" placeholder="Jl, RT/RW, Kelurahan, Kecamatan, Kota, Kode Pos"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="paymentMethod">Metode Pembayaran *</label>
+                <select id="paymentMethod" required>
+                  <option value="transfer">Transfer Bank</option>
+                  <option value="ewallet">E-Wallet (OVO/GoPay/Dana)</option>
+                  <option value="cod">COD (Bayar di Tempat)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="buyerNote">Catatan (opsional)</label>
+                <input type="text" id="buyerNote" placeholder="Contoh: warna, ukuran, dll" />
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%">
+                <i class="fas fa-check"></i> Konfirmasi Pesanan
+              </button>
+            </form>
+          </div>
+          <div class="checkout-summary-side">
+            <h3>Ringkasan Belanja</h3>
+            <div id="checkoutItems"></div>
+            <div class="checkout-total-row">
+              <span>Total Bayar</span>
+              <strong id="checkoutTotal">Rp 0</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORDER SUCCESS MODAL -->
+  <div class="modal" id="orderSuccessModal">
+    <div class="modal-content modal-content-sm">
+      <div class="order-success-box">
+        <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+        <h2>Pesanan Berhasil!</h2>
+        <p id="orderSuccessMsg">Terima kasih. Pesanan Anda sedang diproses.</p>
+        <div class="order-id-box">
+          <span>No. Pesanan</span>
+          <strong id="orderSuccessId">-</strong>
+        </div>
+        <button class="btn btn-primary" id="closeOrderSuccess" style="width:100%;margin-top:1.2rem">
+          <i class="fas fa-home"></i> Kembali
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MY ORDERS MODAL -->
+  <div class="modal" id="myOrdersModal">
+    <div class="modal-content modal-content-lg">
+      <button class="modal-close" id="closeMyOrders"><i class="fas fa-times"></i></button>
+      <div class="my-orders-box">
+        <h2><i class="fas fa-receipt"></i> Pesanan Saya</h2>
+        <div id="myOrdersList"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="toastMessage">Berhasil!</span></div>
+  <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="script.js"></script>
+</body>
+</html>
